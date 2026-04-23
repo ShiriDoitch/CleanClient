@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 // ודאי שיש לך אינטרפייס בשם Booking שתואם לשדות ב-.NET
-import { BookingDTO,BookingPostModel } from '../Models/booking';
+import { BookingDTO, BookingPostModel } from '../Models/booking';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class BookingService {
   // כתובת ה-API עבור הזמנות
   private apiUrl = 'https://localhost:7189/api/Bookings'
 
-  constructor(private _httpClient:HttpClient) { }
+  constructor(private _httpClient: HttpClient) { }
 
   /**
    * GET: api/Bookings
@@ -27,6 +27,10 @@ export class BookingService {
    */
   getBookingById(id: number): Observable<BookingDTO> {
     return this._httpClient.get<BookingDTO>(`${this.apiUrl}/${id}`);
+  }
+  
+  getBookingsByCleaner(id: number): Observable<BookingDTO[]> {
+    return this._httpClient.get<BookingDTO[]>(`${this.apiUrl}/by-cleaner/${id}`);
   }
 
   /**

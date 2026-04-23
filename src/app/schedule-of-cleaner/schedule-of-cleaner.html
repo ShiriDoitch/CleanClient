@@ -1,0 +1,32 @@
+
+
+<div class="schedule-container">
+  <h2 class="title">לוח זמנים למנקה</h2>
+
+  <div class="table-wrapper" *ngIf="bookings && bookings.length > 0; else noData">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>תאריך</th>
+          <th>שעת התחלה</th>
+          <th>שעת סיום</th>
+          <th>סה"כ לתשלום</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bookings">
+          <td>{{ b.date | date:'dd/MM/yyyy' }}</td>
+          <td>{{ b.startWork }}</td>
+          <td>{{ b.endWork }}</td>
+          <td class="price-cell">{{ b.totalPrice | currency:'ILS':'symbol':'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noData>
+    <div class="empty-state">
+      <p>לא נמצאו הזמנות המתוכננות עבורך כרגע.</p>
+    </div>
+  </ng-template>
+</div>

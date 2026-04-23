@@ -1,0 +1,57 @@
+.schedule-container {
+  padding: 20px;
+  direction: rtl; /* יישור לימין */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.table-wrapper {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.styled-table nuclear {
+  background-color: #3498db;
+  color: white;
+  text-align: right;
+}
+
+.styled-table th, .styled-table td {
+  padding: 15px 20px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.3s;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f7ff;
+}
+
+.price-cell {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #7f8c8d;
+  border: 1px dashed #bdc3c7;
+}

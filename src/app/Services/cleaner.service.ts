@@ -42,7 +42,7 @@ export class CleanerService {
    * @param cleaner אובייקט המנקה המעודכן
    */
   updateCleaner(cleaner: CleanerPostModel): Observable<void> {
-    return this._httpClient.put<void>(`${this.apiUrl}/${cleaner.}`, cleaner);
+    return this._httpClient.put<void>(`${this.apiUrl}/${cleaner}`, cleaner);
   }
 
   /**
